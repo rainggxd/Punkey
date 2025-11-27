@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Punk Monkey The Wildest Meme on PumpFun</title>
+<style>
+/* Global reset — removes ALL unwanted spacing */
+
+:root{
+  --pink: #ff2ebf;
+  --pink-light: #ff6fdc;
+  --bg: #0f0b18;
+  --card: #1a1425;
+  --text: #ffffff;
+  --muted: #cfc7d9;
+  --max-width: 1100px;
+  --shadow: rgba(255,46,191,0.15);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,system-ui,-apple-system,"Segoe UI",Roboto;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-top:90px; /* prevents content overlap under header */
+}
+a{color:var(--pink-light);text-decoration:none;}
+a:hover{opacity:0.85;}
+a:focus{outline:2px dashed var(--pink);outline-offset:3px;border-radius:4px;}
+
+/* =========================================
+   FIXED HEADER + NAV (PC + MOBILE SAFE)
+   ========================================= */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#140d20ee;
+  backdrop-filter:blur(10px);
+  padding:16px 28px;
+  display:flex;
+  justify-content:center;
+  z-index:9999;
+  border-bottom:1px solid rgba(255,46,191,0.12);
+}
+
+.nav-inner{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+nav{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--pink-light);
+  font-weight:700;
+  font-size:17px;
+  padding:8px 10px;
+  border-radius:8px;
+  transition:0.2s;
+}
+
+nav a:hover{
+  background:rgba(255,46,191,0.08);
+}
+
+/* Mobile responsiveness */
+@media(max-width:600px){
+  header{
+    padding:14px 18px;
+  }
+  nav{
+    gap:14px;
+    justify-content:center;
+    width:100%;
+  }
+  nav a{
+    font-size:15px;
+    padding:6px 8px;
+  }
+}
+
+/* =========================================
+   ORIGINAL STYLES (UNTOUCHED)
+   ========================================= */
+
+main{max-width:var(--max-width);margin:32px auto;padding:0 20px}
+
+.hero{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:32px;
+  align-items:start;
+  margin-bottom:40px;
+}
+
+.hero .copy-card{
+  background:var(--card);
+  padding:24px;
+  border-radius:12px;
+  border:1px solid rgba(255,46,191,0.12);
+  box-shadow:0 4px 12px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero .copy-card:hover{transform: translateY(-2px);box-shadow:0 6px 18px var(--shadow);}
+.hero .copy-card h3{color:var(--pink-light);margin-bottom:10px;}
+.ca-address{background:#0d0710;padding:12px;border-radius:8px;color:var(--pink);font-family:monospace;word-break:break-all;}
+.copy-btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:8px;border:none;background:var(--pink);color:#08030a;font-weight:700;cursor:pointer;transition:opacity 0.2s;}
+.copy-btn:hover{opacity:0.85;}
+.copy-btn:active{transform:translateY(1px);}
+
+h2{color:var(--pink);font-size:28px;margin-bottom:14px}
+.tagline{color:var(--pink-light);font-size:18px;margin-bottom:14px}
+p{color:var(--muted);margin-bottom:12px}
+
+.cta-btn{display:inline-block;background:var(--pink);color:#08030a;padding:12px 18px;border-radius:10px;font-weight:800;text-decoration:none;transition:opacity 0.2s;}
+.cta-btn:hover{opacity:0.85;}
+
+.card{
+  background:var(--card);
+  padding:24px;
+  border-radius:12px;
+  border:1px solid rgba(255,46,191,0.08);
+  box-shadow:0 4px 12px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover{transform: translateY(-2px);box-shadow:0 6px 18px var(--shadow);}
+
+section{margin-bottom:40px}
+
+.two-col{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px;}
+.team-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(167,139,218,0.08);text-align:center;transition:transform 0.2s, box-shadow 0.2s;}
+.team-card:hover{transform: translateY(-2px);box-shadow:0 6px 18px var(--shadow);}
+
+details{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,46,191,0.06);margin-bottom:12px;transition:box-shadow 0.2s;}
+details:hover{box-shadow:0 4px 12px var(--shadow);}
+summary{cursor:pointer;color:var(--pink-light);font-weight:700;list-style:none;}
+details[open] summary{color:var(--pink);}
+details p, details ul{color:var(--muted);margin-top:8px;}
+
+.socials{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.social-link{background:var(--card);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,46,191,0.06);color:var(--pink-light);transition:opacity 0.2s;}
+.social-link:hover{opacity:0.85;}
+
+footer{max-width:var(--max-width);margin:40px auto 20px;padding:20px;text-align:center;color:var(--muted);font-size:14px;}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:480px){
+  .cta-btn{padding:10px 14px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#buy">Buy</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+  <div>
+    <h2>The Wildest Meme on PumpFun</h2>
+    <p class="tagline">Punk Monkey — community driven, chaotic, and pure fun.</p>
+    <p>
+PUNK MONKEY: MADE BY A FILIPINO, FOR THE WORLD! 
+Behind $PUNKEY is a Filipino dev and team proving that Filipinos can create a strong, healthy, and honest community. 
+We just hit the 20K milestone without selling a single token  from dev down to the team showing our commitment and trustworthiness. 
+We’re building a token that won’t fall to ruggers, and we also do buybacks to protect the jungle from deep dips and keep the floor stable. 
+The vision? Listing on multiple platforms and proving that a dedicated Filipino team can make waves in the crypto space. 
+The jungle isn’t just fun it’s a statement:
+Filipinos can lead, innovate, and build a legacy in crypto. 
+Join the movement, be part of the story, and let’s show Solana what the Filipino spirit can do! 
+#PunkMonkey #Pumpfun #Solana #FilipinoPride #MemecoinSeason
+    </p>
+
+    <div style="margin-top:14px">
+      <a id="buy" class="cta-btn" href="https://pump.fun/coin/FUgeyrfXd2omYGh2A8UySYhQGrP7sGtybEUUBfPApump" target="_blank">🚀 Buy on PumpFun</a>
+    </div>
+  </div>
+
+  <aside class="copy-card">
+    <h3>Contract Address (SOL)</h3>
+    <div class="ca-address" id="caAddress">FUgeyrfXd2omYGh2A8UySYhQGrP7sGtybEUUBfPApump</div>
+    <button class="copy-btn" id="copyBtn">Copy CA</button>
+    <div style="margin-top:10px;color:var(--muted);font-size:13px">
+      Network: <strong>Solana</strong> · Status:
+      <strong style="color:var(--pink)">Live on PumpFun</strong>
+    </div>
+
+    <!-- ▼▼▼ INSERTED LOGO + FRAME ▼▼▼ -->
+    <div style="
+      margin-top:20px;
+      padding:12px;
+      border:2px solid var(--pink);
+      border-radius:12px;
+      background:#0d0710;
+      text-align:center;
+    ">
+      <img src="Logo.jpg" alt="Punk Monkey Logo" style="width:100%;border-radius:10px;">
+    </div>
+    <!-- ▲▲▲ END LOGO INSERT ▲▲▲ -->
+
+  </aside>
+</section>
+
+<section id="about" class="card">
+  <div class="two-col">
+    <div>
+      <h2>About the Project</h2>
+      
+      <p>
+
+        
+      </p>
+
+      <h3 style="color:var(--pink-light);margin-top:12px">Why It Exists</h3>
+      <ul style="color:var(--muted);margin-left:18px">
+        <li>To create a fun, culture-driven memecoin movement.</li>
+        <li>To unite degens, creators, and meme enjoyers under one brand.</li>
+        <li>To build a community-first identity on Solana.</li>
+      </ul>
+
+      <h3 style="color:var(--pink-light);margin-top:12px">What Makes Punk Monkey Different</h3>
+      <ul style="color:var(--muted);margin-left:18px">
+        <li>Strong community culture.</li>
+        <li>Unique branding.</li>
+        <li>Transparent team.</li>
+        <li>Organic growth.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom:8px;color:var(--pink-light)">Quick Links</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+        <a class="cta-btn" href="https://pump.fun/coin/FUgeyrfXd2omYGh2A8UySYhQGrP7sGtybEUUBfPApump" target="_blank">Buy on PumpFun</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="team-grid">
+    <div class="team-card">
+      <h3 style="color:var(--pink)">Founder</h3>
+      <p style="color:var(--muted)"><strong>Oliver Bisle</strong></p>
+    </div>
+
+    <div class="team-card">
+      <h3 style="color:var(--pink)">Moderators / Developers</h3>
+      <p style="color:var(--muted)">
+        <strong>John Paul Halcon Maranca, Sun YearDtower Dex, Mark Joseph Bernardino,  
+        Rheneir Gonzales, Cjay Manlapaz</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="faqs">
+  <h2 style="margin-bottom:12px">FAQs</h2>
+
+  <details>
+    <summary>Is this a financial advice?</summary>
+    <p>No. This is not financial advice. DYOR.</p>
+  </details>
+
+  <details>
+    <summary>Is the team doxxed?</summary>
+    <p>Yes. The team is transparent and doxxed.</p>
+  </details>
+
+  <details>
+    <summary>What are the goals?</summary>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>GComplete the Bonding Curve & Achieve Organic Holder Growth   </li> 
+    <li>Expand Community Presence Across Social Platforms</li>
+    <LI>
+Maintain Transparent Treasury & Buyback Plan </LI>
+        <li>Launch Community-Driven Initiatives and Events</li>
+
+    </ul>
+  </details>
+</section>
+
+<section class="card" id="socials">
+  <h2 style="margin-bottom:12px">Socials</h2>
+  <div class="socials">
+    <a class="social-link" href="https://x.com/monkey71708" target="_blank">𝕏 / Twitter</a>
+    <a class="social-link" href="https://t.me/PunkMonkeyCommunity" target="_blank">Telegram</a>
+    <a class="social-link" href="https://pump.fun/coin/FUgeyrfXd2omYGh2A8UySYhQGrP7sGtybEUUBfPApump" target="_blank">PumpFun</a>
+    <a class="social-link" href="https://facebook.com/groups/780243595048497/" target="_blank">Facebook Group</a>
+  </div>
+</section>
+
+<footer>
+  <div>🐵 Punk Monkey © 2025 — The Wildest Meme on PumpFun</div>
+  <div style="margin-top:8px;font-size:13px;color:var(--muted)">
+    Disclaimer: Not financial advice. DYOR.
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('copyBtn');
+  const ca = document.getElementById('caAddress');
+  if(!btn || !ca) return;
+  btn.addEventListener('click', async function(){
+    try{
+      await navigator.clipboard.writeText(ca.textContent.trim());
+      btn.textContent = 'Copied!';
+      setTimeout(()=> btn.textContent = 'Copy CA', 1800);
+    }catch(e){
+      btn.textContent = 'Copy failed';
+      setTimeout(()=> btn.textContent = 'Copy CA', 1800);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
